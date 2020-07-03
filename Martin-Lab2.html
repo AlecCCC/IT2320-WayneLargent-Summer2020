@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <h2>Alec Martin - IT 2320 - Lab 2</h2>
+  </body>
 </html>
 
 <script>
@@ -22,13 +24,16 @@
       document.writeln(sequence[i] + "<br /> <br />");
     }
     console.log(ratio);
+    document.writeln("The Golden ratio for the last 2 numbers is " + ratio);
   } else {
     amount = window.prompt("Enter a number 3 or greater.");
     for (i = 2; i <= amount; i++) {
       sequence[i] = sequence[i - 2] + sequence[i - 1];
+      ratio = sequence[i - 1] / sequence[i - 2];
       console.log(sequence[i]);
       document.writeln(sequence[i]);
     }
     console.log(ratio);
+    document.writeln("The Golden ratio for the last 2 numbers is " + ratio);
   }
 </script>
