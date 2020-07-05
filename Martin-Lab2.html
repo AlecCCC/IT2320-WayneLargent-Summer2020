@@ -24,16 +24,36 @@
       document.writeln(sequence[i] + "<br /> <br />");
     }
     console.log(ratio);
-    document.writeln("The Golden ratio for the last 2 numbers is " + ratio);
+    console.log(
+      "The Last two numbers are  ",
+      sequence[sequence.length - 2],
+      "and ",
+      sequence[sequence.length - 1]
+    );
+    document.writeln(
+      "The Golden ratio for " +
+        sequence[sequence.length - 2] +
+        " and " +
+        sequence[sequence.length - 1] +
+        " is " +
+        ratio
+    );
   } else {
     amount = window.prompt("Enter a number 3 or greater.");
     for (i = 2; i <= amount; i++) {
       sequence[i] = sequence[i - 2] + sequence[i - 1];
       ratio = sequence[i - 1] / sequence[i - 2];
       console.log(sequence[i]);
-      document.writeln(sequence[i]);
+      document.writeln(sequence[i] + "<br /> <br />");
     }
     console.log(ratio);
-    document.writeln("The Golden ratio for the last 2 numbers is " + ratio);
+    document.writeln(
+      "The Golden ratio for " +
+        sequence[sequence.length - 2] +
+        " and " +
+        sequence[sequence.length - 1] +
+        " is " +
+        ratio
+    );
   }
 </script>
