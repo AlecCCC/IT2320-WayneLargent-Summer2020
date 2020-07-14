@@ -147,122 +147,137 @@
     var confirmPass = $("password2").value;
 
     if (fname == "") {
-      formGood = false;
       $('fnameLabel').className = 'redtext';
+      return formGood = false;
     } else {
       $('fnameLabel').className = 'blacktext';
     }
 
     if (lname == "") {
-      formGood = false;
       $('lnameLabel').className = 'redtext';
+      return formGood = false;
     } else {
       $('lnameLabel').className = 'blacktext';
     }
 
     if (address1 == "") {
-      formGood = false;
+
       $('addressLabel').className = 'redtext';
+      return formGood = false;
     } else {
       $('addressLabel').className = 'blacktext';
     }
 
     if (address2 == "") {
-      formGood = false;
       $('address2Label').className = 'redtext';
+      return formGood = false;
     } else {
       $('address2Label').className = 'blacktext';
     }
 
     if (city == "") {
-      formGood = false;
+
       $('cityLabel').className = 'redtext';
+      return formGood = false;
     } else {
       $('cityLabel').className = 'blacktext';
     }
 
     if (state == "") {
-      formGood = false;
+
       $('stateLabel').className = 'redtext';
+      return formGood = false;
     } else {
       $('stateLabel').className = 'blacktext';
     }
 
     if (zcode == "") {
-      formGood = false;
+
       $('zipLabel').className = 'redtext';
+      return formGood = false;
     } else {
       $('zipLabel').className = 'blacktext';
     }
 
-    if (gender == null) {
-      formGood = false;
+
+    if (gender == "none") {
+
       $('genderLabel').className = 'redtext';
+      return formGood = false;
     } else {
       $('genderLabel').className = 'blacktext';
     }
 
 
     if (birthday == "") {
-      formGood = false;
+
       $('birthdateLabel').className = 'redtext';
+      return formGood = false;
     } else {
       $('birthdateLabel').className = 'blacktext';
     }
 
     if (mstatus == "none") {
-      formGood = false;
+
       $('mstatusLabel').className = 'redtext';
+      return formGood = false;
     } else {
       $('mstatusLabel').className = 'blacktext';
     }
 
     if (state == "none") {
-      formGood = false;
+
       $('stateLabel').className = 'redtext';
+      return formGood = false;
     } else {
       $('stateLabel').className = 'blacktext';
     }
 
-    if (sname == "") {
-      formGood = false;
+    if (mstatus == "Married" && sname == "") {
+
       $('snameLabel').className = 'redtext';
+      return formGood = false;
     } else {
       $('snameLabel').className = 'blacktext';
     }
 
     if (email == "") {
-      formGood = false;
+
       $('emailLabel').className = 'redtext';
+      return formGood = false;
     } else {
       $('emailLabel').className = 'blacktext';
     }
 
     if (phone == "") {
-      formGood = false;
+
       $('phoneLabel').className = 'redtext';
+      return formGood = false;
     } else {
       $('phoneLabel').className = 'blacktext';
     }
 
     if (password == "") {
-      formGood = false;
+
       $('passwordLabel').className = 'redtext';
+      return formGood = false;
     } else {
       $('passwordLabel').className = 'blacktext';
     }
 
     if (confirmPass == "") {
-      formGood = false;
+
       $('password2Label').className = 'redtext';
+      return formGood = false;
     } else {
       $('password2Label').className = 'blacktext';
     }
 
     if (password != confirmPass) {
-      formGood = false;
+
       $('password2Label').className = 'redtext';
       $('passwordLabel').className = 'redtext';
+      return formGood = false;
     }
 
     if (formGood == true) {
