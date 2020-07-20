@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Alec Martin-IT 2320 - Lab 6 - JQuery Animations - Walking Guy</h2>
+    <button id="start">Start</button>
+    <image class="img" id="img" src="pictures/lab6-guy-walking.gif"></image>
+</body>
+
+</html>
+
+<style>
+    .img {
+        width: 400px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        display: none;
+    }
+</style>
+
+<script>
+
+    $(document).ready(function () {
+        var img = $('#img');
+        $("#start").click(function () {
+            img.fadeIn(1000, function () {
+                img.animate({ left: $(window).width() - 400 }, 3000, function () {
+                    img.animate({ left: '0px' }, 3000, function () {
+                        img.fadeOut(1000);
+                    })
+                });
+            });
+        });
+    });
+
+</script>

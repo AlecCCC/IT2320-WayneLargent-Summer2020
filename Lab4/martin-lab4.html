@@ -121,7 +121,7 @@
 
 <script>
   "use strict";
-  var $ = function (id) { return document.getElementById(id); };
+  var $ = function (id) { document.getElementById(id); };
 
   function processForm() {
 
@@ -148,14 +148,14 @@
 
     if (fname == "") {
       $('fnameLabel').className = 'redtext';
-      return formGood = false;
+      formGood = false;
     } else {
       $('fnameLabel').className = 'blacktext';
     }
 
     if (lname == "") {
       $('lnameLabel').className = 'redtext';
-      return formGood = false;
+      formGood = false;
     } else {
       $('lnameLabel').className = 'blacktext';
     }
@@ -163,14 +163,14 @@
     if (address1 == "") {
 
       $('addressLabel').className = 'redtext';
-      return formGood = false;
+      formGood = false;
     } else {
       $('addressLabel').className = 'blacktext';
     }
 
     if (address2 == "") {
       $('address2Label').className = 'redtext';
-      return formGood = false;
+      formGood = false;
     } else {
       $('address2Label').className = 'blacktext';
     }
@@ -178,7 +178,7 @@
     if (city == "") {
 
       $('cityLabel').className = 'redtext';
-      return formGood = false;
+      formGood = false;
     } else {
       $('cityLabel').className = 'blacktext';
     }
@@ -186,7 +186,7 @@
     if (state == "") {
 
       $('stateLabel').className = 'redtext';
-      return formGood = false;
+      formGood = false;
     } else {
       $('stateLabel').className = 'blacktext';
     }
@@ -194,7 +194,7 @@
     if (zcode == "") {
 
       $('zipLabel').className = 'redtext';
-      return formGood = false;
+      formGood = false;
     } else {
       $('zipLabel').className = 'blacktext';
     }
@@ -203,7 +203,7 @@
     if (gender == "none") {
 
       $('genderLabel').className = 'redtext';
-      return formGood = false;
+      formGood = false;
     } else {
       $('genderLabel').className = 'blacktext';
     }
@@ -212,7 +212,7 @@
     if (birthday == "") {
 
       $('birthdateLabel').className = 'redtext';
-      return formGood = false;
+      formGood = false;
     } else {
       $('birthdateLabel').className = 'blacktext';
     }
@@ -220,7 +220,7 @@
     if (mstatus == "none") {
 
       $('mstatusLabel').className = 'redtext';
-      return formGood = false;
+      formGood = false;
     } else {
       $('mstatusLabel').className = 'blacktext';
     }
@@ -228,7 +228,7 @@
     if (state == "none") {
 
       $('stateLabel').className = 'redtext';
-      return formGood = false;
+      formGood = false;
     } else {
       $('stateLabel').className = 'blacktext';
     }
@@ -236,7 +236,7 @@
     if (mstatus == "Married" && sname == "") {
 
       $('snameLabel').className = 'redtext';
-      return formGood = false;
+      formGood = false;
     } else {
       $('snameLabel').className = 'blacktext';
     }
@@ -244,7 +244,7 @@
     if (email == "") {
 
       $('emailLabel').className = 'redtext';
-      return formGood = false;
+      formGood = false;
     } else {
       $('emailLabel').className = 'blacktext';
     }
@@ -252,7 +252,7 @@
     if (phone == "") {
 
       $('phoneLabel').className = 'redtext';
-      return formGood = false;
+      formGood = false;
     } else {
       $('phoneLabel').className = 'blacktext';
     }
@@ -260,7 +260,7 @@
     if (password == "") {
 
       $('passwordLabel').className = 'redtext';
-      return formGood = false;
+      formGood = false;
     } else {
       $('passwordLabel').className = 'blacktext';
     }
@@ -268,7 +268,7 @@
     if (confirmPass == "") {
 
       $('password2Label').className = 'redtext';
-      return formGood = false;
+      formGood = false;
     } else {
       $('password2Label').className = 'blacktext';
     }
@@ -277,7 +277,7 @@
 
       $('password2Label').className = 'redtext';
       $('passwordLabel').className = 'redtext';
-      return formGood = false;
+      formGood = false;
     }
 
     if (formGood == true) {
@@ -290,7 +290,7 @@
 
 
   function mstatusChange() {
-
+    var mstatus = $("mstatus").value;
     if (mstatus == 'Married')
       $('sname').disabled = false;
     else
