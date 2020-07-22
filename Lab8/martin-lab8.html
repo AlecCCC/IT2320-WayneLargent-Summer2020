@@ -11,6 +11,7 @@
     <h2>Alec Martin-IT 2320 - Lab 8 - Weather API</h2>
     <input type="text" size="30" id="zipCode" placeholder="Search by zip code">
     <input type="button" value="Search" id="btnSearch">
+    <input type="reset" id="reset" name="reset" value="Reset"></td>
     <h1>Results</h1>
     <div id="display"></div>
 </body>
@@ -18,8 +19,17 @@
 </html>
 
 <script>
+    $("#reset").click(function () {
 
+        $("#zipCode").val('')
+
+    })
     $(document).ready(function () {
+
+
+
+
+
 
         $("#btnSearch").click(function () {
 
@@ -49,12 +59,12 @@
 
                         html += "<h2>" + "Name of City : " + data.name + "</h2>";
                         html += "<h2>" + "Current condition : " + item.description + "</h2>";
-                        html += "<h2>" + "The Temperature : " + temp + "F</h2>";
+                        html += "<h2>" + "The Temperature : " + temp + "</h2>";
 
                         html += "<h2>" + "Wind Speed and Direction : " + wind + "mph and the degree of direction is " + data.wind.deg + "</h2>";
 
                         html += "<h2>" + "Humidity : " + data.main.humidity + "</h2>";
-                        html += "<h2>" + "Temp min and max : " + min_temp + "F is the Minimum, and the maximum is " + max_temp + "F</h2>";
+                        html += "<h2>" + "Temp min and max : " + min_temp + " is the Minimum, and the maximum is " + max_temp + "</h2>";
 
                     })
                     $("#display").html(html);
