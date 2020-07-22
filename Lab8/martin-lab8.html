@@ -1,0 +1,68 @@
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Alec Martin-IT 2320 - Lab 8 - Weather API</h2>
+    <input type="text" size="30" id="zipCode" placeholder="Search by zip code">
+    <input type="button" value="Search" id="btnSearch">
+    <h1>Results</h1>
+    <div id="display"></div>
+</body>
+
+</html>
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#btnSearch").click(function () {
+
+
+            if ($("#zipCode").val() == "") {
+
+                alert("Please enter a valid zipcode.")
+
+            } else {
+                var zipCode = $("#zipCode").val()
+                var url = "http://api.openweathermap.org/data/2.5/weather?zip=" + zipCode + ",us&appid=4d4e98af7a1b010eb81fd86b80f6f2c2&units=imperial";
+                var key = '4d4e98af7a1b010eb81fd86b80f6f2c2';
+
+                $.ajax({
+                    method: "GET",
+                    url: url,
+                    dataType: "json"
+                })
+
+                $.getJSON(url, function (data) {
+                    var html = ""
+                    $.each(data.weather, function (i, item) {
+                        var wind = data.wind.speed.toFixed(0);
+                        var temp = data.main.temp.toFixed(0);
+                        var min_temp = data.main.temp_min.toFixed(0)
+                        var max_temp = data.main.temp_max.toFixed(0)
+
+                        html += "<h2>" + "Name of City : " + data.name + "</h2>";
+                        html += "<h2>" + "Current condition : " + item.description + "</h2>";
+                        html += "<h2>" + "The Temperature : " + temp + "F</h2>";
+
+                        html += "<h2>" + "Wind Speed and Direction : " + wind + "mph and the degree of direction is " + data.wind.deg + "</h2>";
+
+                        html += "<h2>" + "Humidity : " + data.main.humidity + "</h2>";
+                        html += "<h2>" + "Temp min and max : " + min_temp + "F is the Minimum, and the maximum is " + max_temp + "F</h2>";
+
+                    })
+                    $("#display").html(html);
+                })
+
+            }
+        })
+
+    });
+
+</script>
