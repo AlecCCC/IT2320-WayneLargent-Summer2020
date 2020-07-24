@@ -94,7 +94,7 @@
 		var textarea = document.getElementById('textArea').value;
 		var numDays = document.getElementById('numDays').value;
 		var words = 0, charOccur = 0;
-		var x = "";
+		var removed = "";
 
 		//Date stuff
 		numDays = parseInt(numDays);
@@ -117,19 +117,15 @@
 			if (textarea[i] == search.toUpperCase() || textarea[i] == search.toLowerCase())
 				charOccur++;
 			else
-				x += textarea[i];
+				removed += textarea[i];
 		}
 		document.getElementById('noOfWords').innerHTML = "" + words;
 		document.getElementById('noOfOccur').innerHTML = "" + charOccur;
 		document.getElementById('allCaps').innerHTML = textarea.toUpperCase();
-		document.getElementById('searchRemove').innerHTML = x;
+		document.getElementById('searchRemove').innerHTML = removed;
 		document.getElementById('addDate').innerHTML = month + "/" + day + "/" + year;
 
 		return false;
-
-
-
-
 
 	}
 	$("#reset").click(function () {
